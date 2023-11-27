@@ -1,8 +1,10 @@
 package entities;
 
+import interfaces.CarrinhoDeCompras;
+
 import java.util.ArrayList;
 
-public class Cliente {
+abstract public class Cliente implements CarrinhoDeCompras {
     private String nome;
     private String cpf;
     private String email;
@@ -59,11 +61,13 @@ public class Cliente {
         return carrinho;
     }
 
-    public void setCarrinho(ArrayList<Produto> carrinho) {
-        this.carrinho = carrinho;
-    }
-
+    @Override
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
+    }
+
+    @Override
+    public void removerDoCarrinho(Produto produto) {
+        carrinho.remove()
     }
 }
