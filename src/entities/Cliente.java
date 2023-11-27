@@ -64,10 +64,22 @@ abstract public class Cliente implements CarrinhoDeCompras {
     @Override
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
+        System.out.println(produto + " a");
     }
 
     @Override
     public void removerDoCarrinho(Produto produto) {
         carrinho.remove(produto);
+    }
+
+    @Override
+    public void editarCarrinho(Produto produtoAntigo, Produto produtoNovo) {
+        if (carrinho.contains(produtoAntigo)) {
+            carrinho.remove(produtoAntigo);
+            carrinho.add(produtoNovo);
+            System.out.println("Carrinho editado com sucesso!");
+        } else {
+            System.out.println("Produto não encontrado no carrinho.");
+        }
     }
 }
