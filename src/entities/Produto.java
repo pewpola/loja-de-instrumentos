@@ -1,12 +1,10 @@
 package entities;
 
-import interfaces.InterfaceProduto;
-
-abstract public class Produto implements InterfaceProduto {
-    private String nome;
-    private String marca;
-    private double preco;
-    private String descricao;
+abstract public class Produto {
+    protected String nome;
+    protected String marca;
+    protected double preco;
+    protected String descricao;
 
     public Produto(String nome, String marca, double preco, String descricao) {
         this.nome = nome;
@@ -15,22 +13,18 @@ abstract public class Produto implements InterfaceProduto {
         this.descricao = descricao;
     }
 
-    @Override
     public String getNome() {
         return this.nome;
     }
 
-    @Override
     public String getMarca() {
         return this.marca;
     }
 
-    @Override
     public double getPreco() {
         return this.preco;
     }
 
-    @Override
     public String getDescricao() {
         return this.descricao;
     }
