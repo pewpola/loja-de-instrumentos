@@ -68,6 +68,6 @@ abstract public class Cliente implements CarrinhoDeCompras {
 
     @Override
     public void removerDoCarrinho(Produto produto) {
-        carrinho.remove()
+        carrinho.remove(produto);
     }
 }
