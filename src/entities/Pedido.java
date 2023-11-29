@@ -1,18 +1,17 @@
 package entities;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Pedido {
     private Cliente cliente;
     private ArrayList<Produto> itens;
-    private String data;
-    private String hora;
+    private LocalDateTime dataEHorario;
 
-    public Pedido(Cliente cliente, String data, String hora) {
+    public Pedido(Cliente cliente) {
         this.cliente = cliente;
         this.itens = new ArrayList<>();
-        this.data = data;
-        this.hora = hora;
+        this.dataEHorario = LocalDateTime.now();
     }
 
     public void adicionarItem(Produto produto) {
@@ -35,11 +34,7 @@ public class Pedido {
         return itens;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public String getHora() {
-        return hora;
+    public LocalDateTime getDataEHorario() {
+        return dataEHorario;
     }
 }

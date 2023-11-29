@@ -64,7 +64,7 @@ abstract public class Cliente implements CarrinhoDeCompras {
     @Override
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
-        System.out.println(produto + " a");
+        System.out.println(produto + " adicionado ao carrinho");
     }
 
     @Override

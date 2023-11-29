@@ -5,6 +5,7 @@ import interfaces.CadastroProduto;
 import java.util.ArrayList;
 
 public class Loja {
+    /*
     private ArrayList<Produto> estoque;
     private ArrayList<Pedido> pedidos;
 
@@ -70,19 +71,5 @@ public class Loja {
         System.out.println("Pedido processado para " + pedido.getCliente().getNome() +
                 ". Total: R$ " + pedido.calcularTotal());
     }
-
-    public void cadastrarProduto(String nome, String marca, double preco, String descricao, boolean isInstrumento) {
-        Produto produto;
-        if (isInstrumento) {
-            System.out.print("Digite o modelo do instrumento: ");
-            //String modelo = scanner.next();
-            //produto = new Instrumento(nome, marca, preco, descricao, modelo);
-        } else {
-            System.out.print("Digite o material do acessório: ");
-            //String material = scanner.next();
-            //produto = new Acessorio(nome, marca, preco, descricao, material);
-        }
-        //adicionarAoEstoque(produto);
-        System.out.println("Produto cadastrado com sucesso!");
-    }
+    */
 }

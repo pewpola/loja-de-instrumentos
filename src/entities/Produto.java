@@ -1,31 +1,38 @@
 package entities;
 
 abstract public class Produto {
-    protected String nome;
-    protected String marca;
-    protected double preco;
-    protected String descricao;
 
-    public Produto(String nome, String marca, double preco, String descricao) {
-        this.nome = nome;
+    protected int id;
+    protected String tipo;
+    protected String marca;
+    protected String modelo;
+    protected double preco;
+
+    public Produto(int id, String tipo, String marca, String modelo, double preco) {
+        this.id = id;
+        this.tipo = tipo;
         this.marca = marca;
+        this.modelo = modelo;
         this.preco = preco;
-        this.descricao = descricao;
     }
 
-    public String getNome() {
-        return this.nome;
+    public int getId() {
+        return id;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     public String getMarca() {
-        return this.marca;
+        return marca;
     }
 
     public double getPreco() {
-        return this.preco;
+        return preco;
     }
 
-    public String getDescricao() {
-        return this.descricao;
+    public String getModelo() {
+        return modelo;
     }
 }

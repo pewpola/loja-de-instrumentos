@@ -1,10 +1,14 @@
 package entities;
 
 public class Instrumento extends Produto{
-    private String modelo;
+    private String tipoDeInstrumento;
 
-    public Instrumento(String nome, String marca, double preco, String descricao, String modelo) {
-        super(nome, marca, preco, descricao);
-        this.modelo = modelo;
+    public Instrumento(int id, String tipo, String marca, String modelo, double preco, String tipoDeInstrumento) {
+        super(id, tipo, marca, modelo, preco);
+        this.tipoDeInstrumento = tipoDeInstrumento;
+    }
+
+    public String getTipoDeInstrumento() {
+        return tipoDeInstrumento;
     }
 }
