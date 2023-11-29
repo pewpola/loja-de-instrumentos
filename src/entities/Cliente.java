@@ -1,23 +1,23 @@
 package entities;
 
-import interfaces.CarrinhoDeCompras;
+import entities.Produto;
 
 import java.util.ArrayList;
 
-abstract public class Cliente implements CarrinhoDeCompras {
+public class Cliente  {
     private String nome;
     private String cpf;
     private String email;
     private String telefone;
-    private String endereco;
+
     private ArrayList<Produto> carrinho;
 
-    public Cliente(String nome, String cpf, String email, String telefone, String endereco) {
+    public Cliente(String nome, String cpf, String email, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
-        this.endereco = endereco;
+
         this.carrinho = new ArrayList<>();
     }
 
@@ -45,14 +45,6 @@ abstract public class Cliente implements CarrinhoDeCompras {
         return telefone;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
@@ -61,18 +53,15 @@ abstract public class Cliente implements CarrinhoDeCompras {
         return carrinho;
     }
 
-    @Override
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
         System.out.println(produto + " adicionado ao carrinho");
     }
 
-    @Override
     public void removerDoCarrinho(Produto produto) {
         carrinho.remove(produto);
     }
 
-    @Override
     public void editarCarrinho(Produto produtoAntigo, Produto produtoNovo) {
         if (carrinho.contains(produtoAntigo)) {
             carrinho.remove(produtoAntigo);

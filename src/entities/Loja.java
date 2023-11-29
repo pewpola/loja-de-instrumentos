@@ -1,11 +1,11 @@
 package entities;
 
-import interfaces.CadastroProduto;
+import interfaces.CarrinhoDeCompras;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-abstract public class Loja implements CadastroProduto {
+public class Loja implements CarrinhoDeCompras {
     private ArrayList<Produto> estoque;
     private ArrayList<Pedido> pedidos;
     private ArrayList<Cliente> clientes;
@@ -27,28 +27,40 @@ abstract public class Loja implements CadastroProduto {
             System.out.println("- " + produto.descricaoProduto());
         }
     }
-    /*
-    public void cadastrarProduto(int id, String tipo, String marca, String modelo, double preco) {
-        Produto produto;
-        if (produto instanceof instrumento) {
-            System.out.print("Digite o modelo do instrumento: ");
-            String modelo = scanner.next();
-            produto = new Instrumento(int id, String tipo, String marca, String modelo, double preco, String tipoDeInstrumento);
-        } else {
-            System.out.print("Digite o material do acessório: ");
-            String material = scanner.next();
-            produto = new Acessorio(int id, String tipo, String marca, String modelo, double preco);
-        }
-        adicionarAoEstoque(produto);
-        System.out.println("Produto cadastrado com sucesso!");
-    }
 
-     */
-
+    @Override
     public void adicionarAoCarrinho(Cliente cliente, Produto produto) {
         cliente.adicionarAoCarrinho(produto);
         System.out.println(produto.descricaoProduto() + " adicionado ao carrinho de " + cliente.getNome());
     }
+
+    @Override
+    public void removerDoCarrinho(Produto produto) {
+
+    }
+
+    @Override
+    public void editarCarrinho(Produto produtoAntigo, Produto produtoNovo) {
+
+    }
+
+    /*
+        public void cadastrarProduto(int id, String tipo, String marca, String modelo, double preco) {
+            Produto produto;
+            if (produto instanceof instrumento) {
+                System.out.print("Digite o modelo do instrumento: ");
+                String modelo = scanner.next();
+                produto = new Instrumento(int id, String tipo, String marca, String modelo, double preco, String tipoDeInstrumento);
+            } else {
+                System.out.print("Digite o material do acessório: ");
+                String material = scanner.next();
+                produto = new Acessorio(int id, String tipo, String marca, String modelo, double preco);
+            }
+            adicionarAoEstoque(produto);
+            System.out.println("Produto cadastrado com sucesso!");
+        }
+
+         */
 
     public void processarCompra(Cliente cliente) {
         if (cliente.getCarrinho().isEmpty()) {
@@ -82,15 +94,12 @@ abstract public class Loja implements CadastroProduto {
     }
 
     public void processarPedido(Pedido pedido) {
-        // Atualiza o estoque (simulação simples)
         for (Produto item : pedido.getItens()) {
             estoque.remove(item);
         }
 
-        // Adiciona o pedido à lista de pedidos
         pedidos.add(pedido);
 
-        // Adiciona o cliente à lista de clientes se ainda não estiver presente
         if (!clientes.contains(pedido.getCliente())) {
             clientes.add(pedido.getCliente());
         }
@@ -98,5 +107,27 @@ abstract public class Loja implements CadastroProduto {
         System.out.println("Pedido processado para " + pedido.getCliente().getNome() +
                 ". Total: R$ " + pedido.calcularTotal() +
                 ". Data e Hora: " + pedido.getDataEHorario());
+    }
+
+    public void visualizarCarrinho(Cliente cliente) {
+        ArrayList<Produto> carrinho = cliente.getCarrinho();
+
+        if (carrinho.isEmpty()) {
+            System.out.println(cliente.getNome() + " não possui itens no carrinho.");
+        } else {
+            System.out.println("Carrinho de " + cliente.getNome() + ":");
+            for (Produto produto : carrinho) {
+                System.out.println("- " + produto.descricaoProduto());
+            }
+            System.out.println("Total do Carrinho: R$ " + calcularTotalCarrinho(carrinho));
+        }
+    }
+
+    private double calcularTotalCarrinho(ArrayList<Produto> carrinho) {
+        double total = 0.0;
+        for (Produto produto : carrinho) {
+            total += produto.getPreco();
+        }
+        return total;
     }
 }
