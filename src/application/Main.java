@@ -9,16 +9,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Loja loja = new Loja();
+        LeitorArquivo leitorArquivo = new LeitorArquivo();
 
-        ArrayList<Produto> produtos = LeitorArquivo.lerProdutos("arquivos/produtos.txt");
-        ArrayList<Cliente> clientes = LeitorArquivo.lerClientes("arquivos/clientes.txt");
+        ArrayList<Produto> produtos = leitorArquivo.lerProdutos("arquivos/produtos.txt");
+        ArrayList<Cliente> clientes = leitorArquivo.lerClientes("arquivos/clientes.txt");
 
         for (Produto produto: produtos) {
             loja.adicionarAoEstoque(produto);
-        }
-
-        for (Cliente cliente: clientes) {
-            System.out.println(cliente.getNome());
         }
 
         int opcao;
@@ -42,7 +39,7 @@ public class Main {
                 loja.visualizarEstoque();
             }
             if (opcao == 2) {
-                System.out.print("Nome do cliente: ");
+                System.out.print("Digite o seu nome: ");
                 String nomeCliente = sc.nextLine();
                 Cliente cliente = null;
                 for (Cliente c : clientes) {
@@ -74,7 +71,7 @@ public class Main {
             }
             if (opcao == 3) {
                 loja.visualizarEstoque();
-                System.out.print("Digite o nome do cliente: ");
+                System.out.print("Digite o seu nome: ");
                 String nomeClienteRemover = sc.nextLine();
                 Cliente clienteRemover = null;
                 for (Cliente c : clientes) {
@@ -90,7 +87,7 @@ public class Main {
                 loja.removerDoCarrinho(clienteRemover);
             }
             if (opcao == 4) {
-                System.out.print("Nome do cliente: ");
+                System.out.print("Digite o seu nome: ");
                 String nomeClienteCompra = sc.nextLine();
                 Cliente clienteCompra = null;
                 for (Cliente c : clientes) {
@@ -105,12 +102,12 @@ public class Main {
                 loja.processarCompra(clienteCompra);
             }
             if (opcao == 5) {
-                System.out.print("Nome do cliente: ");
+                System.out.print("Digite o seu nome: ");
                 String nomeClienteHistorico = sc.nextLine();
                 Cliente clienteHistorico = null;
-                for (Cliente c : clientes) {
-                    if (c.getNome().equals(nomeClienteHistorico)) {
-                        clienteHistorico = c;
+                for (Cliente cliente : clientes) {
+                    if (cliente.getNome().equals(nomeClienteHistorico)) {
+                        clienteHistorico = cliente;
                         break;
                     }
                 }

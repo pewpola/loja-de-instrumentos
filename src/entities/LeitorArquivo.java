@@ -6,29 +6,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class LeitorArquivo {
-    public static ArrayList<Produto> lerProdutos(String arquivo) {
+    public ArrayList<Produto> lerProdutos(String arquivo) {
         ArrayList<Produto> produtos = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha;
             while ((linha = br.readLine()) != null) {
-                String[] partes = linha.split(",");
-                int id = Integer.parseInt(partes[0].trim());
-                String tipo = partes[1].trim();
-                String marca = partes[2].trim();
-                String modelo = partes[3].trim();
-                double preco = Double.parseDouble(partes[4].trim());
+                String[] atributos = linha.split(";");
+                int id = Integer.parseInt(atributos[0].trim());
+                String tipo = atributos[1].trim();
+                String marca = atributos[2].trim();
+                String modelo = atributos[3].trim();
+                double preco = Double.parseDouble(atributos[4].trim());
 
                 Produto produto = null;
                 if (tipo.equals("Instrumento")) {
-                    String tipoInstrumento = partes[5].trim();
+                    String tipoInstrumento = atributos[5].trim();
                     produto = new Instrumento(id, tipo, marca, modelo, preco, tipoInstrumento);
-                } else if (tipo.equals("Acessorio")) {
-                    String compativelCom = partes[5].trim();
-                    String material = partes[6].trim();
-                    produto = new Acessorio(id, tipo, marca, modelo, preco, compativelCom, material);
                 } else {
-                    continue;
+                    String compativelCom = atributos[5].trim();
+                    String material = atributos[6].trim();
+                    produto = new Acessorio(id, tipo, marca, modelo, preco, compativelCom, material);
                 }
 
                 produtos.add(produto);
@@ -40,17 +38,17 @@ public class LeitorArquivo {
         return produtos;
     }
 
-    public static ArrayList<Cliente> lerClientes(String arquivo) {
+    public ArrayList<Cliente> lerClientes(String arquivo) {
         ArrayList<Cliente> clientes = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha;
             while ((linha = br.readLine()) != null) {
-                String[] partes = linha.split(",");
-                String nome = partes[0].trim();
-                String cpf = partes[1].trim();
-                String email = partes[2].trim();
-                String telefone = partes[3].trim();
+                String[] atributos = linha.split(";");
+                String nome = atributos[0].trim();
+                String cpf = atributos[1].trim();
+                String email = atributos[2].trim();
+                String telefone = atributos[3].trim();
 
                 Cliente cliente = new Cliente(nome, cpf, email, telefone);
                 clientes.add(cliente);

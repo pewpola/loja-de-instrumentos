@@ -1,4 +1,4 @@
-Eduardo Jorge,123.456.789-39,eduardojorge@gmail.com,(85) 98123-4567
-Ian Waki,333.433.343-33,ianwaki@gmail.com,(85) 98345-6789
-Arthur Veras,456.789.012-90,arthurveras@email.com,(85) 99123-4567
-Diego Benevides,555.535.345-35,diegobenevides@email.com,(85) 99456-7890
+Eduardo Jorge;123.456.789-39;eduardojorge@gmail.com;(85) 98123-4567
+Ian Waki;333.433.343-33;ianwaki@gmail.com;(85) 98345-6789
+Arthur Veras;456.789.012-90;arthurveras@email.com;(85) 99123-4567
+Diego Benevides;555.535.345-35;diegobenevides@email.com;(85) 99456-7890

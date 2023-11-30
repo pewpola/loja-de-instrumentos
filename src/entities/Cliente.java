@@ -59,20 +59,5 @@ public class Cliente  {
 
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
-        System.out.println(produto + " adicionado ao carrinho");
-    }
-
-    public void removerDoCarrinho(Produto produto) {
-        carrinho.remove(produto);
-    }
-
-    public void editarCarrinho(Produto produtoAntigo, Produto produtoNovo) {
-        if (carrinho.contains(produtoAntigo)) {
-            carrinho.remove(produtoAntigo);
-            carrinho.add(produtoNovo);
-            System.out.println("Carrinho editado com sucesso!");
-        } else {
-            System.out.println("Produto não encontrado no carrinho.");
-        }
     }
 }

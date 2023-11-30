@@ -1,5 +1,5 @@
-01,Instrumento,Guitarra,Fender Stratocaster,1000.00,Elétrica
-02,Acessorio,Cordas de Violão,D'Addario Nylon,20.00,Violão Clássico,D'Addario,Nylon
-03,Instrumento,Piano,Yamaha Grand,5000.00,Vertical
-04,Acessorio,Palhetas para Guitarra,Fender Medium,5.50,Guitarra,Fender,Plástico
-05,Instrumento,Flauta Transversal,Jupiter JTU1010,800.00,Orquestral
+01;Instrumento;Guitarra;Fender Stratocaster;6000.00;Elétrica
+02;Acessorio;Cordas de Violão;D'Addario Nylon;50.00;Violão Clássico;D'Addario;Nylon
+03;Instrumento;Piano;Yamaha Grand;5000.00;Vertical
+04;Acessorio;Palhetas para Guitarra;Fender Medium;6.50;Guitarra;Fender;Plástico
+05;Instrumento;Flauta Transversal;Jupiter JTU1010;1800.00;Orquestral

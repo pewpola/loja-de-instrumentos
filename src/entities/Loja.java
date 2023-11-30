@@ -62,25 +62,6 @@ public class Loja implements CarrinhoDeCompras {
         System.out.println("Item removido com sucesso.");
     }
 
-
-    /*
-        public void cadastrarProduto(int id, String tipo, String marca, String modelo, double preco) {
-            Produto produto;
-            if (produto instanceof instrumento) {
-                System.out.print("Digite o modelo do instrumento: ");
-                String modelo = scanner.next();
-                produto = new Instrumento(int id, String tipo, String marca, String modelo, double preco, String tipoDeInstrumento);
-            } else {
-                System.out.print("Digite o material do acessório: ");
-                String material = scanner.next();
-                produto = new Acessorio(int id, String tipo, String marca, String modelo, double preco);
-            }
-            adicionarAoEstoque(produto);
-            System.out.println("Produto cadastrado com sucesso!");
-        }
-
-         */
-
     public void processarCompra(Cliente cliente) {
         if (cliente.getCarrinho().isEmpty()) {
             System.out.println("Carrinho vazio. Adicione produtos antes de finalizar a compra.");

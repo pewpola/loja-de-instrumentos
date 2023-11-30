@@ -1,9 +1,11 @@
 package entities;
 
+import interfaces.InterfacePedido;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements InterfacePedido {
     private Cliente cliente;
     private ArrayList<Produto> itens;
     private LocalDateTime dataEHorario;
