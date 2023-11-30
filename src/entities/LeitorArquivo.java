@@ -34,7 +34,7 @@ public class LeitorArquivo {
                 produtos.add(produto);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
         return produtos;
@@ -56,7 +56,7 @@ public class LeitorArquivo {
                 clientes.add(cliente);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
         return clientes;

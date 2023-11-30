@@ -29,6 +29,7 @@ public class Main {
             System.out.println("----------------Escolha uma opção ao seu desejo na loja------------");
             System.out.println(">   1. Visualizar Estoque   <");
             System.out.println(">   2. Adicionar Produto ao carrinho  <");
+            System.out.println(">   1. Efetuar Compra   <");
             System.out.println(">   0. Sair da Loja   <");
 
             opcao = sc.nextInt();
@@ -67,6 +68,22 @@ public class Main {
                 }
                 loja.adicionarAoCarrinho(cliente, produtoCarrinho);
                 loja.visualizarCarrinho(cliente);
+            }
+            if (opcao == 3) {
+                System.out.print("Nome do cliente: ");
+                String nomeClienteCompra = sc.nextLine();
+                Cliente clienteCompra = null;
+                for (Cliente c : clientes) {
+                    if (c.getNome().equals(nomeClienteCompra)) {
+                        clienteCompra = c;
+                    }
+                }
+                if (clienteCompra == null) {
+                    System.out.println("Cliente não encontrado.");
+                    break;
+                }
+                loja.processarCompra(clienteCompra);
+                break;
             }
             if (opcao == 0) {
                 System.out.println("Saindo...");
