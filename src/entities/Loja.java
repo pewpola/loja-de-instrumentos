@@ -9,7 +9,8 @@ public class Loja implements CarrinhoDeCompras {
     private ArrayList<Produto> estoque;
     private ArrayList<Pedido> pedidos;
     private ArrayList<Cliente> clientes;
-    private static Scanner scanner = new Scanner(System.in);
+
+    Scanner sc = new Scanner(System.in);
 
     public Loja() {
         this.estoque = new ArrayList<>();
@@ -35,14 +36,32 @@ public class Loja implements CarrinhoDeCompras {
     }
 
     @Override
-    public void removerDoCarrinho(Produto produto) {
+    public void removerDoCarrinho(Cliente cliente) {
+        ArrayList<Produto> carrinho = cliente.getCarrinho();
 
+        if (carrinho.isEmpty()) {
+            System.out.println(cliente.getNome() + " não possui itens no carrinho.");
+            return;
+        }
+
+        System.out.println("Carrinho de " + cliente.getNome() + ":");
+        for (int i = 0; i < carrinho.size(); i++) {
+            Produto produto = carrinho.get(i);
+            System.out.println((i + 1) + ". " + produto.descricaoProduto());
+        }
+
+        System.out.print("Digite o número do item que deseja remover: ");
+        int numeroItem = sc.nextInt();
+
+        if (numeroItem < 1 || numeroItem > carrinho.size()) {
+            System.out.println("Número de item inválido.");
+            return;
+        }
+
+        carrinho.remove(numeroItem - 1);
+        System.out.println("Item removido com sucesso.");
     }
 
-    @Override
-    public void editarCarrinho(Produto produtoAntigo, Produto produtoNovo) {
-
-    }
 
     /*
         public void cadastrarProduto(int id, String tipo, String marca, String modelo, double preco) {

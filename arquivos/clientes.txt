@@ -1,4 +1,4 @@
-João da Silva,123.456.789-00,joao@email.com,(11) 98765-4321
-Maria Oliveira,987.654.321-00,maria@email.com,(21) 12345-6789
-Carlos Pereira,456.789.012-00,carlos@email.com,(31) 87654-3210
-Ana Souza,789.012.345-00,ana@email.com,(41) 23456-7890
+Eduardo Jorge,123.456.789-39,eduardojorge@gmail.com,(85) 98123-4567
+Ian Waki,333.433.343-33,ianwaki@gmail.com,(21) 98345-6789
+Arthur Veras,456.789.012-90,arthurveras@email.com,(31) 99123-4567
+Diego Benevides,555.535.345-35,diegobenevides@email.com,(41) 99456-7890
