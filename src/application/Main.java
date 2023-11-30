@@ -32,6 +32,7 @@ public class Main {
             System.out.println(">   3. Remover Produdo do carrinho  <");
             System.out.println(">   4. Efetuar Compra   <");
             System.out.println(">   5. Histórico de Compras  <");
+            System.out.println(">   6. Ver clientes da Loja   <");
             System.out.println(">   0. Sair da Loja   <");
 
             opcao = sc.nextInt();
@@ -118,6 +119,11 @@ public class Main {
                     break;
                 }
                 loja.exibirHistoricoDeCompras(clienteHistorico);
+            }
+            if (opcao == 6) {
+                for (Cliente cliente: clientes) {
+                    System.out.println(cliente.descricaoCliente());
+                }
             }
             if (opcao == 0) {
                 System.out.println("Saindo...");

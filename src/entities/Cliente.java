@@ -53,6 +53,10 @@ public class Cliente  {
         return carrinho;
     }
 
+    public String descricaoCliente() {
+        return "Nome: " + nome + "; CPF: " + cpf + "; E-mail: " + email + "; Telefone: " + telefone;
+    }
+
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.add(produto);
         System.out.println(produto + " adicionado ao carrinho");
