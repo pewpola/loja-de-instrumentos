@@ -24,9 +24,8 @@ public class LeitorArquivo {
                     String tipoInstrumento = atributos[5].trim();
                     produto = new Instrumento(id, tipo, marca, modelo, preco, tipoInstrumento);
                 } else {
-                    String compativelCom = atributos[5].trim();
-                    String material = atributos[6].trim();
-                    produto = new Acessorio(id, tipo, marca, modelo, preco, compativelCom, material);
+                    String material = atributos[5].trim();
+                    produto = new Acessorio(id, tipo, marca, modelo, preco, material);
                 }
 
                 produtos.add(produto);
