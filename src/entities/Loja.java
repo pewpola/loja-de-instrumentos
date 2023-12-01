@@ -40,31 +40,31 @@ public class Loja implements CarrinhoDeCompras {
         ArrayList<Produto> carrinho = cliente.getCarrinho();
 
         if (carrinho.isEmpty()) {
-            System.out.println(cliente.getNome() + " não possui itens no carrinho.");
+            System.out.println(cliente.getNome() + " não possui itens no carrinho por enquanto.");
             return;
         }
 
         System.out.println("Carrinho de " + cliente.getNome() + ":");
         for (int i = 0; i < carrinho.size(); i++) {
             Produto produto = carrinho.get(i);
-            System.out.println((i + 1) + ". " + produto.descricaoProduto());
+            System.out.println((i + 1) + ". " + produto.descricaoProdutoSemId());
         }
 
-        System.out.print("Digite o número do item que deseja remover: ");
-        int numeroItem = sc.nextInt();
+        System.out.print("Digite o número do produto que deseja remover: ");
+        int numeroProduto = sc.nextInt();
 
-        if (numeroItem < 1 || numeroItem > carrinho.size()) {
+        if (numeroProduto < 1 || numeroProduto > carrinho.size()) {
             System.out.println("Número de item inválido.");
             return;
         }
 
-        carrinho.remove(numeroItem - 1);
+        carrinho.remove(numeroProduto - 1);
         System.out.println("Item removido com sucesso.");
     }
 
     public void processarCompra(Cliente cliente) {
         if (cliente.getCarrinho().isEmpty()) {
-            System.out.println("Carrinho vazio. Adicione produtos antes de finalizar a compra.");
+            System.out.println("O seu Carrinho está vazio. Adicione produtos para poder efetuar uma compra.");
             return;
         }
 
@@ -79,16 +79,16 @@ public class Loja implements CarrinhoDeCompras {
     }
 
     public void exibirHistoricoDeCompras(Cliente cliente) {
-        System.out.println("Histórico de compras para " + cliente.getNome() + ":");
+        System.out.println("Histórico de compras para o cliente " + cliente.getNome() + ":");
         for (Pedido pedido : pedidos) {
             if (pedido.getCliente() == cliente) {
                 System.out.println("Data e Hora: " + pedido.getDataEHorario());
                 System.out.println("Itens do Pedido:");
                 for (Produto produto : pedido.getItens()) {
-                    System.out.println("- " + produto.descricaoProduto() + ", Preço: R$ " + produto.getPreco());
+                    System.out.println("- " + produto.descricaoProdutoSemId() + ", Preço: R$ " + produto.getPreco());
                 }
-                System.out.println("Total do Pedido: R$ " + pedido.calcularTotal());
-                System.out.println("------------------------------");
+                System.out.println("Valor Total do Pedido: R$ " + pedido.calcularTotal());
+                System.out.println("======================================================");
             }
         }
     }
@@ -104,8 +104,8 @@ public class Loja implements CarrinhoDeCompras {
             clientes.add(pedido.getCliente());
         }
 
-        System.out.println("Pedido processado para " + pedido.getCliente().getNome() +
-                ". Total: R$ " + pedido.calcularTotal() +
+        System.out.println("Pedido efetuado para " + pedido.getCliente().getNome() +
+                ". Total a pagar: R$ " + pedido.calcularTotal() +
                 ". Data e Hora: " + pedido.getDataEHorario());
     }
 
@@ -117,7 +117,7 @@ public class Loja implements CarrinhoDeCompras {
         } else {
             System.out.println("Carrinho de " + cliente.getNome() + ":");
             for (Produto produto : carrinho) {
-                System.out.println("- " + produto.descricaoProduto());
+                System.out.println("- " + produto.descricaoProdutoSemId());
             }
             System.out.println("Total do Carrinho: R$ " + calcularTotalCarrinho(carrinho));
         }

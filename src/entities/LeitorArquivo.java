@@ -9,9 +9,9 @@ public class LeitorArquivo {
     public ArrayList<Produto> lerProdutos(String arquivo) {
         ArrayList<Produto> produtos = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(arquivo))) {
             String linha;
-            while ((linha = br.readLine()) != null) {
+            while ((linha = bufferedReader.readLine()) != null) {
                 String[] atributos = linha.split(";");
                 int id = Integer.parseInt(atributos[0].trim());
                 String tipo = atributos[1].trim();
@@ -41,9 +41,9 @@ public class LeitorArquivo {
     public ArrayList<Cliente> lerClientes(String arquivo) {
         ArrayList<Cliente> clientes = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(arquivo))) {
             String linha;
-            while ((linha = br.readLine()) != null) {
+            while ((linha = bufferedReader.readLine()) != null) {
                 String[] atributos = linha.split(";");
                 String nome = atributos[0].trim();
                 String cpf = atributos[1].trim();

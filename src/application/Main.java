@@ -26,7 +26,7 @@ public class Main {
             System.out.println("----------------Escolha uma opção ao seu desejo na loja------------");
             System.out.println(">   1. Visualizar Estoque   <");
             System.out.println(">   2. Adicionar Produto ao carrinho  <");
-            System.out.println(">   3. Remover Produdo do carrinho  <");
+            System.out.println(">   3. Remover Produto do carrinho  <");
             System.out.println(">   4. Efetuar Compra   <");
             System.out.println(">   5. Histórico de Compras  <");
             System.out.println(">   6. Ver clientes da Loja   <");
@@ -70,13 +70,13 @@ public class Main {
                 loja.visualizarCarrinho(cliente);
             }
             if (opcao == 3) {
-                loja.visualizarEstoque();
+                //loja.visualizarEstoque();
                 System.out.print("Digite o seu nome: ");
                 String nomeClienteRemover = sc.nextLine();
                 Cliente clienteRemover = null;
-                for (Cliente c : clientes) {
-                    if (c.getNome().equals(nomeClienteRemover)) {
-                        clienteRemover = c;
+                for (Cliente cliente : clientes) {
+                    if (cliente.getNome().equals(nomeClienteRemover)) {
+                        clienteRemover = cliente;
                         break;
                     }
                 }
