@@ -1,5 +1,12 @@
-01;Instrumento;Guitarra;Fender Stratocaster;6000.00;Elétrica
+01;Instrumento;Guitarra;Fender Player Stratocaster;6000.00;Cordas
 02;Acessorio;Cordas de Violão;D'Addario Nylon;50.00;Violão Clássico;Nylon
-03;Instrumento;Piano;Yamaha Grand;5000.00;Vertical
-04;Acessorio;Palhetas para Guitarra;Fender Medium;6.50;Guitarra;Plástico
-05;Instrumento;Flauta Transversal;Jupiter JTU1010;1800.00;Orquestral
+03;Instrumento;Piano;Yamaha Grand;5000.00;Cordas
+04;Instrumento;Teclado;Casio Stage;3500.00;Vertical
+05;Acessorio;Palhetas para Guitarra;Fender Medium;6.50;Guitarra;Plástico
+06;Instrumento;Flauta Transversal;Jupiter JTU1010;1800.00;Orquestral
+07;Instrumento;Guitarra;Tagima Stratocaster TG-540;1200.00;Cordas
+08;Instrumento;Baixo;Fender Player Jaguar;4000.00;Cordas
+09;Instrumento;Guitarra;Ibanez Semi Acústica AS73;5500.00;Cordas
+10;Acessorio;Amplificador;Orange Crush;1600.00;Guitarra;Metal
+11;Acessorio;Amplificador;Marshall Dsl40cr;6400.00;Guitarra;Fibra de Carbono
+12;Acessorio;Encordoamento;Elixir 12052;100.00;Guitarra;Aço

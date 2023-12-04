@@ -26,10 +26,11 @@ public class Main {
             System.out.println("----------------Escolha uma opção ao seu desejo na loja------------");
             System.out.println(">   1. Visualizar Estoque   <");
             System.out.println(">   2. Adicionar Produto ao carrinho  <");
-            System.out.println(">   3. Remover Produto do carrinho  <");
-            System.out.println(">   4. Efetuar Compra   <");
-            System.out.println(">   5. Histórico de Compras  <");
-            System.out.println(">   6. Ver clientes da Loja   <");
+            System.out.println(">   3. Visualizar Carrinho   <");
+            System.out.println(">   4. Remover Produto do carrinho  <");
+            System.out.println(">   5. Efetuar Compra   <");
+            System.out.println(">   6. Histórico de Compras  <");
+            System.out.println(">   7. Ver clientes da Loja   <");
             System.out.println(">   0. Sair da Loja   <");
 
             opcao = sc.nextInt();
@@ -69,8 +70,23 @@ public class Main {
                 loja.adicionarAoCarrinho(cliente, produtoCarrinho);
                 loja.visualizarCarrinho(cliente);
             }
-            if (opcao == 3) {
-                //loja.visualizarEstoque();
+            if(opcao == 3) {
+                System.out.print("Digite o seu nome: ");
+                String nomeClienteCarrinho = sc.nextLine();
+                Cliente clienteCarrinho = null;
+                for (Cliente cliente : clientes) {
+                    if (cliente.getNome().equals(nomeClienteCarrinho)) {
+                        clienteCarrinho = cliente;
+                        break;
+                    }
+                }
+                if (clienteCarrinho == null) {
+                    System.out.println("Cliente não encontrado.");
+                    break;
+                }
+                loja.visualizarCarrinho(clienteCarrinho);
+            }
+            if (opcao == 4) {
                 System.out.print("Digite o seu nome: ");
                 String nomeClienteRemover = sc.nextLine();
                 Cliente clienteRemover = null;
@@ -86,7 +102,7 @@ public class Main {
                 }
                 loja.removerDoCarrinho(clienteRemover);
             }
-            if (opcao == 4) {
+            if (opcao == 5) {
                 System.out.print("Digite o seu nome: ");
                 String nomeClienteCompra = sc.nextLine();
                 Cliente clienteCompra = null;
@@ -101,7 +117,7 @@ public class Main {
                 }
                 loja.processarCompra(clienteCompra);
             }
-            if (opcao == 5) {
+            if (opcao == 6) {
                 System.out.print("Digite o seu nome: ");
                 String nomeClienteHistorico = sc.nextLine();
                 Cliente clienteHistorico = null;
@@ -117,7 +133,7 @@ public class Main {
                 }
                 loja.exibirHistoricoDeCompras(clienteHistorico);
             }
-            if (opcao == 6) {
+            if (opcao == 7) {
                 for (Cliente cliente: clientes) {
                     System.out.println(cliente.descricaoCliente());
                 }

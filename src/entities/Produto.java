@@ -37,7 +37,7 @@ abstract public class Produto {
     }
 
     public String descricaoProduto() {
-        return id + " " + tipo + " " + marca + " "+ modelo + " por R$ " + preco;
+        return "Id: " + id + " " + tipo + " " + marca + " "+ modelo + " por R$ " + preco;
     }
 
     public String descricaoProdutoSemId() {

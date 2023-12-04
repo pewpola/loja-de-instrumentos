@@ -115,11 +115,13 @@ public class Loja implements CarrinhoDeCompras {
         if (carrinho.isEmpty()) {
             System.out.println(cliente.getNome() + " não possui itens no carrinho.");
         } else {
+            System.out.println("----------------------------------------------");
             System.out.println("Carrinho de " + cliente.getNome() + ":");
             for (Produto produto : carrinho) {
                 System.out.println("- " + produto.descricaoProdutoSemId());
             }
             System.out.println("Total do Carrinho: R$ " + calcularTotalCarrinho(carrinho));
+            System.out.println("----------------------------------------------");
         }
     }
 
